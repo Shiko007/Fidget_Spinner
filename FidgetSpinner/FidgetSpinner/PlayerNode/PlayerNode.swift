@@ -20,12 +20,13 @@ class PlayerNode{
     func CreatePlayerNode(scene: SKScene,name: String ,atPoint: CGPoint)-> TouchableSpriteNode{
         let nodeWidth = scene.frame.width * Configurations().playerNodeSizeWidthFactor
         let nodeHeight = scene.frame.width * Configurations().playerNodeSizeWidthFactor
-        let square = TouchableSpriteNode(color: .red, size: CGSize(width: nodeWidth, height: nodeHeight))
-        
+//        let square = TouchableSpriteNode(color: .red, size: CGSize(width: nodeWidth, height: nodeHeight))
+        let square = TouchableSpriteNode(imageNamed: Configurations().playerNodeImageName)
+        square.size = CGSize(width: nodeWidth, height: nodeHeight)
         square.name = name
         square.isUserInteractionEnabled = true
         square.physicsBody = SKPhysicsBody(rectangleOf: square.size)
-        square.physicsBody?.isDynamic = false
+        square.physicsBody?.affectedByGravity = false
         square.position = atPoint
         
         return square
