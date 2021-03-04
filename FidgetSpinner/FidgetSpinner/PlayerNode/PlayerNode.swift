@@ -20,16 +20,22 @@ class PlayerNode{
     func CreatePlayerNode(scene: SKScene,name: String ,atPoint: CGPoint)-> TouchableSpriteNode{
         let nodeWidth = scene.frame.width * Configurations().playerNodeSizeWidthFactor
         let nodeHeight = scene.frame.width * Configurations().playerNodeSizeWidthFactor
-//        let square = TouchableSpriteNode(color: .red, size: CGSize(width: nodeWidth, height: nodeHeight))
-        let square = TouchableSpriteNode(imageNamed: Configurations().playerNodeImageName)
-        square.size = CGSize(width: nodeWidth, height: nodeHeight)
-        square.name = name
-        square.isUserInteractionEnabled = true
-        square.physicsBody = SKPhysicsBody(rectangleOf: square.size)
-        square.physicsBody?.affectedByGravity = false
-        square.position = atPoint
+        let playerNode = TouchableSpriteNode(imageNamed: Configurations().playerNodeImageName)
+        playerNode.texture = SKTexture(imageNamed: Configurations().playerNodeImageName)
+        playerNode.size = CGSize(width: nodeWidth, height: nodeHeight)
+        playerNode.name = name
+        playerNode.isUserInteractionEnabled = true
+        if(playerNode.texture != nil){
+            playerNode.physicsBody = SKPhysicsBody(texture: playerNode.texture!, size: playerNode.size)
+        }
+        else{
+            playerNode.physicsBody = SKPhysicsBody(circleOfRadius: nodeWidth/2)
+        }
         
-        return square
+        playerNode.physicsBody?.affectedByGravity = false
+        playerNode.position = atPoint
+        
+        return playerNode
     }
     
     func PlayerNodeTouched(playerNode: TouchableSpriteNode){
