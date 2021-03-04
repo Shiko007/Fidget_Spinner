@@ -20,6 +20,7 @@ class GameViewController: UIViewController {
 
             scene.scaleMode = .aspectFill
             scene.backgroundColor = .black
+            scene.physicsBody = SKPhysicsBody(edgeLoopFrom: self.view.bounds)
             // Present the scene
             view.presentScene(scene)
             
@@ -28,7 +29,7 @@ class GameViewController: UIViewController {
             
             view.showsFPS = true
             view.showsNodeCount = true
-            view.showsPhysics = true
+//            view.showsPhysics = true
         }
     }
 

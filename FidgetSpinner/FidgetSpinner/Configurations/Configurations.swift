@@ -10,8 +10,9 @@ import UIKit
 
 
 class Configurations{
-    let playerNodeSizeWidthFactor = CGFloat(0.20)
-    let playerNodeSizeHeightFactor = CGFloat(0.20)
+    let playerNodeSizeWidthFactor = CGFloat(0.50)
+    let playerNodeSizeHeightFactor = CGFloat(0.50)
+    let playerNodeImpulseRate = CGFloat(0.15)
     let playerNodeImageName = "FidgetSpinner"
     let playerNodeName = "Player"
 }
