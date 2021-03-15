@@ -11,7 +11,8 @@ import GameplayKit
 class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
-        Settings().addSettingsIcon(scene: self, position: CGPoint(x: self.frame.midX, y: self.frame.midY))
+        self.name = "GameScene"
+        Settings().addSettingsIcon(scene: self)
     }
     
     override func update(_ currentTime: TimeInterval) {
