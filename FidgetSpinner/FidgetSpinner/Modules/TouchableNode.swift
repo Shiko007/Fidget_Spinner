@@ -23,9 +23,7 @@ class TouchableSpriteNode : SKSpriteNode
             self.removeFromParent()
         }
         else if(self.name == (Configurations().settingsWindowName)){
-            print(self.size)
-            print(self.frame.minX)
-            print(touches.first?.location(in: self))
+
         }
         else if(self.name == (Configurations().settingsBackgroundShapesName)){
             Settings().backgroundShapesTouched(backgroundShapesNode: self)
@@ -36,7 +34,6 @@ class TouchableSpriteNode : SKSpriteNode
         else if((self.name?.contains(Configurations().backgroundImagePrefix))! && ((self.name?.contains(Configurations().backgroundImageSampleSuffix))!)){
             let backgroundNode = self.scene?.childNode(withName: Configurations().backgroundImagePrefix) as! SKShapeNode
             let backgroundImageName = self.name?.replacingOccurrences(of: Configurations().backgroundImageSampleSuffix, with: "")
-            print(backgroundNode)
             backgroundNode.fillTexture = SKTexture(imageNamed: backgroundImageName!)
         }
     }

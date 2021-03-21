@@ -99,12 +99,10 @@ class Settings{
     func loadSettingsBackgroundShapesWindow(insideWindow: TouchableSpriteNode){
         for background in 0...Configurations().numberOfBackgroundShapes-1{
             let shapeImageName = Configurations().backgroundImagePrefix + String(background) + Configurations().backgroundImageSampleSuffix
-            let backgroundShape = TouchableSpriteNode(texture: SKTexture(imageNamed: shapeImageName))
+            let backgroundShape = TouchableSpriteNode(imageNamed: shapeImageName)
             backgroundShape.isUserInteractionEnabled = true
             backgroundShape.size = CGSize(width: insideWindow.frame.width * Configurations().backgroundShapesSettingsMenuWidthFactor, height: ((insideWindow.size.height) * Configurations().backgroundShapesSettingsMenuHeigthFactor))
             backgroundShape.name = shapeImageName
-            backgroundShape.physicsBody = SKPhysicsBody(rectangleOf: backgroundShape.size)
-            backgroundShape.physicsBody?.isDynamic = false
             backgroundShape.position = CGPoint(x: 0, y: (backgroundShape.size.height - backgroundShape.size.height * CGFloat(background)) + ((CGFloat(background) - 1) * -Configurations().backgroundShapesSettingsMenuSpacer) )
             backgroundShape.zPosition = Configurations().settingsWindowElementszPosition
             insideWindow.addChild(backgroundShape)
@@ -112,7 +110,23 @@ class Settings{
     }
     
     func loadSettingsBackgroundColorsWindow(insideWindow: TouchableSpriteNode){
-        
+        for background in 0...Configurations().numberOfBackgroundColors-1{
+            let colorImageName = Configurations().backgroundImagePrefix + String(background) + Configurations().backgroundColorSampleSuffix
+            let backgroundColor = TouchableSpriteNode(imageNamed: colorImageName)
+            var spacerValue : CGFloat = 0
+            var positionX : CGFloat = 0
+            var positionY : CGFloat = 0
+            let whichRow = CGFloat(Int((CGFloat(background)/Configurations().numberOfColorsPerRow)))
+            backgroundColor.isUserInteractionEnabled = true
+            backgroundColor.size = CGSize(width: insideWindow.frame.width * Configurations().backgroundColorsSettingsMenuFactor, height: insideWindow.frame.width * Configurations().backgroundColorsSettingsMenuFactor)
+            backgroundColor.name = colorImageName
+            spacerValue = backgroundColor.size.width / Configurations().numberOfColorsPerRow
+            positionX = ((backgroundColor.size.width + spacerValue) * ((CGFloat(background) - 2) + (-Configurations().numberOfColorsPerRow * whichRow))) + spacerValue*2.5
+            positionY = ((backgroundColor.size.width + spacerValue) * whichRow)
+            backgroundColor.position = CGPoint(x: positionX, y: positionY)
+            backgroundColor.zPosition = Configurations().settingsWindowElementszPosition
+            insideWindow.addChild(backgroundColor)
+        }
     }
     
     func resetSettingsWindow(settingsWindow: TouchableSpriteNode){
