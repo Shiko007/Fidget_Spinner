@@ -9,12 +9,11 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    var playerNodes:Int = 0
-    var touchLocation = CGPoint()
-    let playerNodeTexture = SKTexture(imageNamed: Configurations().playerNodeImageName)
     
     override func didMove(to view: SKView) {
-        
+        self.name = "GameScene"
+        Settings().addSettingsIcon(scene: self)
+        updateWorld(scene: self)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -22,21 +21,20 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let nodeRadius = Configurations().playerNodeSizeWidthFactor * self.frame.width / 2
-        let leftBoundry =  self.frame.minX + (nodeRadius)
-        let rightBoundry = self.frame.maxX - (nodeRadius)
-        let upBoundery = self.frame.maxY - (nodeRadius)
-        let downBoundry = self.frame.minY + (nodeRadius)
-        playerNodeTexture.preload {
-            if let touch = touches.first {
-                self.touchLocation = touch.location(in: self)
-            }
-            if((self.touchLocation.x > leftBoundry) && (self.touchLocation.x < rightBoundry) && (self.touchLocation.y > downBoundry) && (self.touchLocation.y < upBoundery)){
-                self.playerNodes += 1
-                let playerNode = PlayerNode().CreatePlayerNode(scene: self,name: Configurations().playerNodeName + String(self.playerNodes),texture:  self.playerNodeTexture, atPoint: self.touchLocation)
-                self.addChild(playerNode)
-            }
-        }
+        PlayerNode().createPlayerNodeWithinBoundries(scene: self, name: Configurations().playerNodeName,touches: touches)
+    }
+    
+    func updateWorld(scene: SKScene){
+        setupBackground(scene: scene)
+    }
+    
+    func setupBackground(scene: SKScene){
+        let backgroundNode = SKShapeNode(rect: CGRect(x: scene.frame.minX, y: scene.frame.minY, width: scene.size.width, height: scene.size.height))
+        backgroundNode.strokeColor = .clear
+        backgroundNode.fillColor = .red
+        backgroundNode.name = Configurations().backgroundImagePrefix
+        backgroundNode.zPosition = Configurations().backgroundPosition
+        scene.addChild(backgroundNode)
     }
 }
 
