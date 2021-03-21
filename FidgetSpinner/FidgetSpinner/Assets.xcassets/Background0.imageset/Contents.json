@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Background3.png",
+      "filename" : "Background1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Background3@2x.png",
+      "filename" : "Background1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Background3@3x.png",
+      "filename" : "Background1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

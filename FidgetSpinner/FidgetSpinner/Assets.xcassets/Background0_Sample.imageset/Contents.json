@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Background3_Sample.png",
+      "filename" : "Background0_Sample.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Background3_Sample@2x.png",
+      "filename" : "Background0_Sample@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Background3_Sample@3x.png",
+      "filename" : "Background0_Sample@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
