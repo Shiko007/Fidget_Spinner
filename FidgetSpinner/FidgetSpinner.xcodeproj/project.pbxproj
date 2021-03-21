@@ -14,6 +14,7 @@
 		37A4ABAE25EEC2F6007409A6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A4ABAD25EEC2F6007409A6 /* GameViewController.swift */; };
 		37A4ABB125EEC2F6007409A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A4ABAF25EEC2F6007409A6 /* Main.storyboard */; };
 		37A4ABB325EEC2F7007409A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37A4ABB225EEC2F7007409A6 /* Assets.xcassets */; };
+		37A663092607874D00B68D27 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A663082607874D00B68D27 /* ColorPicker.swift */; };
 		37D85E4B25F3101A002E8C75 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D85E4A25F3101A002E8C75 /* Settings.swift */; };
 		37D85E4E25F3134A002E8C75 /* TouchableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D85E4D25F3134A002E8C75 /* TouchableNode.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		37A4ABB025EEC2F6007409A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37A4ABB225EEC2F7007409A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37A4ABB425EEC2F7007409A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37A663082607874D00B68D27 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		37D85E4A25F3101A002E8C75 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		37D85E4D25F3134A002E8C75 /* TouchableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +51,7 @@
 				378B06A325F00350002C02D4 /* PlayerNode.swift */,
 				37D85E4A25F3101A002E8C75 /* Settings.swift */,
 				37D85E4D25F3134A002E8C75 /* TouchableNode.swift */,
+				37A663082607874D00B68D27 /* ColorPicker.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D85E4B25F3101A002E8C75 /* Settings.swift in Sources */,
+				37A663092607874D00B68D27 /* ColorPicker.swift in Sources */,
 				37A4ABAC25EEC2F6007409A6 /* GameScene.swift in Sources */,
 				378B06AA25F006A7002C02D4 /* Configurations.swift in Sources */,
 				37A4ABAE25EEC2F6007409A6 /* GameViewController.swift in Sources */,
